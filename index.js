@@ -90,9 +90,9 @@ bot.on("message", function(message) {
         message.channel.send(serverembed);
         break;
             
-                case "report":
+        case "report":
         var rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-        if (!rUser) return message.channel.send("Kunne ikke finne spilleren!");
+        if (!rUser) return message.channel.send("Error: Kunne ikke finne spilleren, bruk: +report (Spiller) (Grunn)");
         var reason = args.join(" ").slice(22);
         
         var reportmsg = new Discord.RichEmbed()
