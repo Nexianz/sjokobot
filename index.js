@@ -31,7 +31,7 @@ var bot = new Discord.Client();
 bot.on("ready", function() {
     console.log(StartupPrefix + "Restarter SjokoBot 1.0..");
     console.log(StartupPrefix + "SjokoBot 1.0 restartet!");
-    bot.user.setActivity("SjokoMj0lk simulator", {type: "PLAYING"});
+    bot.user.setActivity("SjokoMj0lk simulator123", {type: "PLAYING"});
 });
 
 bot.on("message", function(message) {
