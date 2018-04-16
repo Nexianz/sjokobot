@@ -92,7 +92,7 @@ bot.on("message", function(message) {
             
         case "report":
         var rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-        if (!rUser) return message.channel.send("Error: Kunne ikke finne spilleren, bruk: +report (Spiller) (Grunn)");
+        if(!rUser) return message.channel.send("Kunne ikke finne spilleren, bruk **+report (Spiller) (Grunn)**");
         var reason = args.join(" ").slice(22);
         
         var reportmsg = new Discord.RichEmbed()
@@ -100,7 +100,7 @@ bot.on("message", function(message) {
         .setColor("0x00FFFF")
         .addField("Du rapporterte", rUser.get + "med ID" + rUser.id)
         .addField("Grunn", reason);
-            
+
         var reportembed = new Discord.RichEmbed()
         .setDescription("Reports")
         .setColor("0x00FFFF")
@@ -110,11 +110,10 @@ bot.on("message", function(message) {
         .addField("Tid", message.createdAt)
         .addField("Grunn", reason);
 
-        var reportchannel = messgae.guild.channels.find("name", "reports");
-        if (!reportchannel) return message.channel.send("Kunne ikke finne rapport kanal");
+        var reportchannel = messgae.guild.channels.find('name', "reports");
+        if(!reportchannel) return message.channel.send("Kunne ikke finne rapport kanal, kontakt en admin");
 
         message.delete.catch(O_o=>{});
-            
         reportchannel.send(reportembed);
         message.channel.send(reportmsg);
         break;
