@@ -81,7 +81,7 @@ bot.on("message", function(message) {
         var serverembed = new Discord.RichEmbed()
         .setDescription("Server informasjon")
         .setColor("0x00FFFF")
-        .setThumbnail(bit.user.avatarURL)
+        .setThumbnail(bot.user.avatarURL)
         .addField("Server navn", message.guild.name)
         .addField("Laget", message.guild.createdAt)
         .addField("Du joinet", message.member.joinedAt)
