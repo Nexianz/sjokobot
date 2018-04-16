@@ -89,6 +89,33 @@ bot.on("message", function(message) {
 
         message.channel.send(serverembed);
         break;
+            
+                case "report":
+        var rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+        if (!rUser) return message.channel.send("Kunne ikke finne spilleren!");
+        var reason = args.join(" ").slice(22);
+        
+        var reportmsg = new Discord.RichEmbed()
+        .setDescription("Reports")
+        .setColor("0x00FFFF")
+        .addField("Du rapporterte", rUser.get + "med ID" + rUser.id)
+        .addField("Grunn", reason);
+        var reportembed = new Discord.RichEmbed()
+        .setDescription("Reports")
+        .setColor("0x00FFFF")
+        .addField("Rapportert", rUser.get + "med ID" + rUser.id)
+        .addField("Rapportert av", message.author + "med ID:" + message.author.id)
+        .addField("Kanal", message.channel)
+        .addField("Tid", message.createdAt)
+        .addField("Grunn", reason);
+
+        var reportchannel = messgae.guild.channels.find("name", "rapporter");
+        if (!reportchannel) return message.channel.send("Kunne ikke finne rapport kanal");
+
+        message.delete.catch(O_o=>{});
+        reportchannel.send(reportembed);
+        message.channel.send(reportmsg);
+        break;
 
         case "meme":
         if (args[0]) message.channel.send(fortunes[Math.floor(Math.random() * fortunes.length)]);
