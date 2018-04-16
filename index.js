@@ -69,7 +69,7 @@ bot.on("message", function(message) {
         var info = [
             "**SjokoBot 1.0**",
             "Programert og laget av **Nexianz#8554**",
-            "Versjon: 1.0"
+            "Versjon: 1.0test2"
         ]
         message.channel.send(info);
         break;
