@@ -65,14 +65,29 @@ bot.on("message", function(message) {
         message.channel.send(test);
         break;
 
-        case "info":
-        var info = [
-            "**SjokoBot 1.0**",
-            "Programert og laget av **Nexianz#8554**",
-            "Versjon: 1.0"
-        ]
-        var infoembed = new Discord.RichEmbed()
-        message.channel.send(info);
+        case "botinfo":
+        var botembed = new Discord.RichEmbed()
+        .setDescription("Bot informasjon")
+        .setColor("0x00FFFF")
+        .setThumbnail(bot.user.avatarURL)
+        .addField("Bot navn", bot.user.username)
+        .addField("Utviklet av", bot.user.author)
+        .addField("Laget", bot.user.createdAt);
+
+        message.channel.send(botembed);
+        break;
+
+        case "serverinfo":
+        var serverembed = new Discord.RichEmbed()
+        .setDescription("Server informasjon")
+        .setColor("0x00FFFF")
+        .setThumbnail(bit.user.avatarURL)
+        .addField("Server navn", message.guild.name)
+        .addField("Laget", message.guild.createdAt)
+        .addField("Du joinet", message.member.joinedAt)
+        .addField("Totalt medlemmer", message.guild.memberCount);
+
+        message.channel.send(serverembed);
         break;
 
         case "meme":
