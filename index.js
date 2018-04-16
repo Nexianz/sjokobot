@@ -45,7 +45,7 @@ bot.on("message", function(message) {
 
         case "hjelp":
         var hjelp = [
-            "Mine kommandoer ertest123:",
+            "Mine kommandoer er:",
             "**▬▬▬▬▬**",
             "**+hjelp** - Viser dette.",
             "**+meme** - Morsomme memes.",
