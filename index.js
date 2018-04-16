@@ -100,6 +100,7 @@ bot.on("message", function(message) {
         .setColor("0x00FFFF")
         .addField("Du rapporterte", rUser.get + "med ID" + rUser.id)
         .addField("Grunn", reason);
+            
         var reportembed = new Discord.RichEmbed()
         .setDescription("Reports")
         .setColor("0x00FFFF")
@@ -109,10 +110,11 @@ bot.on("message", function(message) {
         .addField("Tid", message.createdAt)
         .addField("Grunn", reason);
 
-        var reportchannel = messgae.guild.channels.find("name", "rapporter");
+        var reportchannel = messgae.guild.channels.find("name", "reports");
         if (!reportchannel) return message.channel.send("Kunne ikke finne rapport kanal");
 
         message.delete.catch(O_o=>{});
+            
         reportchannel.send(reportembed);
         message.channel.send(reportmsg);
         break;
