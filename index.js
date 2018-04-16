@@ -71,7 +71,7 @@ bot.on("message", function(message) {
         .setColor("0x00FFFF")
         .setThumbnail(bot.user.avatarURL)
         .addField("Bot navn", bot.user.username)
-        .addField("Utviklet av", bot.user.author)
+        .addField("Utviklet av", "Nexianz")
         .addField("Laget", bot.user.createdAt);
 
         message.channel.send(botembed);
