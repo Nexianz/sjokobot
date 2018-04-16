@@ -71,6 +71,7 @@ bot.on("message", function(message) {
             "Programert og laget av **Nexianz#8554**",
             "Versjon: 1.0"
         ]
+        var infoembed = new Discord.RichEmbed()
         message.channel.send(info);
         break;
 
