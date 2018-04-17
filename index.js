@@ -55,6 +55,10 @@ bot.on("message", function(message) {
         message.channel.send("Hei " + message.author.toString() + "! Mitt navn er **SjokoBot 1.0**")
         message.channel.send(hjelp);
         break;
+            
+        case "nexianz":
+        message.channel.send("Nexianz er best <3");
+        break;
 
         case "test":
         var test = new Discord.RichEmbed()
