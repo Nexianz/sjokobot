@@ -56,8 +56,8 @@ bot.on("message", function(message) {
         message.channel.send(hjelp);
         break;
             
-        case "nexianz":
-        message.channel.send("Nexianz er best <3");
+        case "bendik":
+        message.channel.send("Bendik er rar");
         break;
 
         case "test":
