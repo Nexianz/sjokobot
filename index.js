@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 const TOKEN = "NDM1MTE0NjY4NzE4MDMwODU4.DbUPow.iXZ4hYI-0yKye8t4Lpw2iWtCE3E";
 const PREFIX = "\";
-const StartupPrefix = "| SjokoBot | ";
+const StartupPrefix = "| SjokoBot |";
 
 var fortunes = [
     "https://absurdintellectual.com/wp-content/uploads/2017/02/maxresdefault1.jpg",
